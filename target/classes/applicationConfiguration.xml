@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+<!-- <bean id="bd" class="com.telusko.services.BlueDart"/>
+<bean id="dhl" class="com.telusko.services.DHL"/> 
+<bean id="fedEx" class="com.telusko.services.FedEx"/>
+<bean id="amz" class="com.telusko.main.Amazon" autowire="byType"></bean> -->
+
+<!-- <bean id="bd" class="com.telusko.services.BlueDart"/>
+<bean id="dhl" class="com.telusko.services.DHL" primary="true"/> 
+<bean id="fedEx" class="com.telusko.services.FedEx"/>
+<bean id="amz" class="com.telusko.main.Amazon" autowire="byType"></bean>
+</beans> -->
+
+
+<!-- <bean id="bd" class="com.telusko.services.BlueDart"/>
+<bean id="dhl" class="com.telusko.services.DHL" autowire-candidate="false"/> 
+<bean id="fedEx" class="com.telusko.services.FedEx" autowire-candidate="false"/>
+<bean id="amz" class="com.telusko.main.Amazon" autowire="constructor"></bean> -->
+
+<!--  <bean id="bd" class="com.telusko.services.BlueDart"/>
+<bean id="dhl" class="com.telusko.services.DHL"/> 
+<bean id="service" class="com.telusko.services.FedEx"/>
+<bean id="amz" class="com.telusko.main.Amazon" autowire="byName"></bean>
+ -->
+ 
+  <bean id="bd" class="com.telusko.services.BlueDart"/>
+<bean id="dhl" class="com.telusko.services.DHL"/> 
+<bean id="service" class="com.telusko.services.FedEx"/>
+<bean id="amz" class="com.telusko.main.Amazon" autowire="no">
+<property ref="bd" name="service"></property>
+</bean>
+ 
+</beans>
